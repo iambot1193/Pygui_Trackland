@@ -1,0 +1,115 @@
+import pyautogui as pa
+import time
+import keyboard
+pa.FAILSAFE = False
+
+keyboard.block_key('f2')
+keyboard.block_key('f3')
+keyboard.block_key('f3')
+
+
+while(1):
+    if keyboard.is_pressed('f2'):
+        print("f2")
+
+        inicialx = -1330
+        inicialy = 270
+        abax = 75
+
+        def findcolor():
+            mouse_x, mouse_y = pa.position()
+            pixel_image = pa.screenshot(region=(mouse_x, mouse_y, 1, 1))
+            pixel_color = pixel_image.getpixel((0, 0))
+            return pixel_color
+
+
+        for i in range (0, 10): 
+            
+
+            pa.moveTo(-1330, inicialy, duration=0.1)
+            pa.leftClick()
+            pa.hotkey('ctrl', 'c')
+            pa.moveTo(1211, 118)
+            pa.leftClick()
+            time.sleep(0.4)
+            pa.hotkey('ctrl', 'v')
+            time.sleep(0.2)
+            pa.moveTo(1325, 170)
+            pa.leftClick()
+
+            pa.moveTo(964, 287)
+            currentColor = findcolor()
+            while currentColor!=(255,182,99):
+                time.sleep(0.1)
+                currentColor = findcolor()
+            pa.leftClick()
+
+            
+            abax += 113
+            inicialy += 32
+            pa.moveTo(abax, 20)
+            pa.leftClick()
+            time.sleep(0.4)
+
+        time.sleep(3)
+
+        inicialx = -1330
+        inicialy = 270
+        abax = 75
+        pa.moveTo(abax, 20)
+        pa.leftClick()
+
+        for i in range (0, 10):
+
+            pa.moveTo(48, 552)
+            pa.leftClick()
+            pa.moveTo(195, 233)
+            pa.leftClick()
+
+            abax += 113
+            inicialy += 32
+            pa.moveTo(abax, 20)
+            pa.leftClick()
+            time.sleep(0.4)
+
+        time.sleep(5)
+
+        if keyboard.is_pressed('f4'):
+            print("f4")
+
+            inicialx = -1330
+            inicialy = 270
+            abax = 75
+            pa.moveTo(abax, 20)
+            pa.leftClick()
+
+            for i in range (0, 10):
+                
+                pa.moveTo(573, 445)
+                pa.leftClick()
+                time.sleep(0.5)
+                pa.moveTo(240, 488)
+                pa.leftClick()
+                pa.leftClick()
+                pa.leftClick()
+                pa.leftClick()
+                pa.leftClick()
+                pa.leftClick()
+                time.sleep(0.1)
+                pa.moveTo(281, 555)
+                pa.mouseDown()
+                pa.moveTo(20, 555, 0.2)
+                pa.mouseUp()
+
+                pa.moveTo(569, 488, 0.1)
+                pa.leftClick()
+                time.sleep(0.4)
+                
+                
+                abax += 113
+                inicialy += 32
+                pa.moveTo(abax, 20)
+                pa.leftClick()
+                time.sleep(0.3)
+
+

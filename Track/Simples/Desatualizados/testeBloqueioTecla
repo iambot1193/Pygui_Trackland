@@ -1,0 +1,10 @@
+import pyautogui as pa
+import time
+import keyboard
+pa.FAILSAFE = False
+
+keyboard.block_key('f3')
+
+while(1):
+    if keyboard.is_pressed('f3'):
+        print("f3")
