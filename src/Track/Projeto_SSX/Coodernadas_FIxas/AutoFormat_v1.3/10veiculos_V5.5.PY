@@ -4,7 +4,7 @@ import keyboard
 from playsound import playsound
 import sonsperso
 import pyperclip
-import lembrete
+import lembrete_Auto
 import threading
 
 
@@ -17,6 +17,7 @@ keyboard.block_key("esc")
 keyboard.block_key("f2")
 keyboard.block_key("f3")
 keyboard.block_key("f4")
+keyboard.block_key("f6")
 #configs
 
 
@@ -75,7 +76,7 @@ while(True):
         
 
         ##### variaveis padrão #########################
-        number_vehicles = 10
+        number_vehicles = 10    
         sheets_y = 270
         ssx_x = 95
         ##### variaveis padrão #############################
@@ -93,6 +94,23 @@ while(True):
                 check_loading()
                 move(1212, 115)
                 click()   
+                
+                #detecando abertura da pesquisa
+                pa.moveTo(920, 147)
+                current_color = find_color()
+                contador = 0
+                while current_color != (255, 182, 99):
+                    time.sleep(0.1)
+                    contador += 1
+                    current_color = find_color()
+                    if contador >= 5:
+                        pa.moveTo(1212, 122)
+                        pa.leftClick()
+                        pa.moveTo(920, 147)
+                        contador == 0
+                #detectando abertura da pesquisa
+
+                
                 move(1135, 172)
                 click()
                 pa.hotkey("ctrl", "v")
@@ -237,5 +255,8 @@ while(True):
                     
     if keyboard.is_pressed("f4"):                
         threading.Thread(target= lembrete.executar, daemon=True).start()
-        threading.Thread(target= close_program(), daemon=True).start()      
+        threading.Thread(target= close_program(), daemon=True).start()  
+        
+    #if keyboard.is_pressed("f6"): 
+            
 
