@@ -18,6 +18,7 @@ keyboard.block_key("f2")
 keyboard.block_key("f3")
 keyboard.block_key("f4")
 keyboard.block_key("f6")
+keyboard.block_key("f7")
 #configs
 
 
@@ -56,6 +57,114 @@ def click():
 def move(x ,y):
     pa.moveTo(x ,y)
     
+def colar(texto):
+    pyperclip.copy(texto)
+    pa.hotkey("ctrl", "v")
+
+def situ_substituir(numero):
+    match numero:
+        case 1: #S COMUNICAÇÃO
+            colar("Sem comunicação.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Contatar cliente.")
+            pa.hotkey("tab")
+            colar("SEM COMUNICAÇÃO.")
+            return
+        case 2: #RESET
+            colar("Veículo apresenta pequenos saltos e travamentos durante a rota.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Enviar reset.")
+            pa.hotkey("tab")
+            colar("PEQUENOS SALTOS E TRAVAMENTOS.")
+            return
+        case 3: #BUZZER VIOLADO
+            colar("Veículo apresenta possível violação de buzzer, faz maior parte da rota sem identificação de motorista.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("POSSÍVEL VIOLAÇÃO.")
+            return
+        case 4: #SALTOS
+            colar("Veículo apresenta saltos e travamentos durante a rota.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("SALTOS E TRAVAMENTOS.")
+            return
+        case 5: #IGNIÇÃO VIOLADA
+            colar("Veículo apresenta sensor de ignição violado durante a rota.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("POSSÍVEL VIOLAÇÃO.")
+            return
+        case 6: #MAL CONTATO BACKUP
+            colar("Bateria backup apresenta mal contato durante a rota.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("POSSÍVEL VIOLAÇÃO.")
+            return
+        case 7: #BACKUP NUNCA TEM CARGA
+            colar("Bateria backup nunca tem carga, mesmo com ignição ligada.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("POSSÍVEL VIOLAÇÃO.")
+            return
+        case 8: #S DADOS O SUFICIENTE
+            colar("Veículo não apresentou dados o suficiente. Aguardar próxima análise.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Em observação.")
+            pa.hotkey("tab")
+            colar("")
+            return
+        case 9: #POSIÇÃO IG OFF
+            colar("Veículo apresentou posição com a ignição desligada.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("POSSÍVEL VIOLAÇÃO.")
+            return
+        case 10: #BATERIA VIOLADA PORTAL
+            colar("Veículo apresentou violação de bateria indicado pelo portal SSX.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("POSSÍVEL VIOLAÇÃO.")
+            return
+        case 11: #SALTOS IG OFF
+            colar("Veículo apresentou saltos e travamentos com a ignição desligada durante a rota.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("POSSÍVEL VIOLAÇÃO.")
+            return
+        case 12: #GPS TRAVADO
+            colar("Veículo apresenta gps travado durante a rota.")
+            for i in range (0, 4):
+                pa.hotkey("tab")
+            colar("Agendar manutenção.")
+            pa.hotkey("tab")
+            colar("GPS TRAVADO.")
+            return
+        case _:
+            return
+    
+
+
+
                                #################funções##########################
                                
 while(True):
@@ -150,7 +259,7 @@ while(True):
 
                         close_program()
                         
-                        playsound(r"C:\Users\jenni\Downloads\programs\SCIUTPS\Simples\sons\not.mp3")
+                        playsound(r"C:\Users\jenni\Downloads\programs\Scripts\pygui_trackland\src\Track\Simples\sons\bonk_BEtiM8g.mp3")
                         time.sleep(0.3)
                         if keyboard.is_pressed("f1"):
                             btn = 1    
@@ -159,7 +268,7 @@ while(True):
                 else:
                     move(966, 285) 
                     click()   
-                #################    verificar se tem mais de um rastreador
+                #################    ver0ificar se tem mais de um rastreador
                 
                 
                 ### adicionando para ir para o proximo 
@@ -254,9 +363,69 @@ while(True):
         pa.write(" 17-10-2025")
                     
     if keyboard.is_pressed("f4"):                
-        threading.Thread(target= lembrete.executar, daemon=True).start()
+        threading.Thread(target= lembrete_Auto.executar, daemon=True).start()
         threading.Thread(target= close_program(), daemon=True).start()  
         
-    #if keyboard.is_pressed("f6"): 
+    if keyboard.is_pressed("f6"):
+            pa.moveTo(-975, 160)
+            pa.leftClick()
+            pa.moveTo(-961, 341)
+            pa.leftClick()
+            
+            pa.moveTo(-904, 164)
+            pa.click()
+            pa.hotkey("ctrl", "a")
+            pa.write("12")
+            pa.hotkey("enter")
+            
+            pa.leftClick()
+            close_program()
+            
+            pa.moveTo(-609, 164)
+            pa.leftClick()
+            pa.moveTo(-579, 197)
+            pa.leftClick()
+            close_program()
+            
+            pa.moveTo(-577, 159)
+            pa.leftClick()
+            pa.moveTo(-543, 199)
+            pa.leftClick()
+            close_program()
+            
+            pa.moveTo(-534, 166)
+            pa.leftClick()
+            pa.moveTo(-505, 201)
+            pa.leftClick()
+            close_program()
+            
+            pa.moveTo(-845, 163)
+            pa.leftClick()
+            
+            pa.moveTo(-688, 161)
+            pa.leftClick()
+            pa.moveTo(-524, 229)
+            pa.leftClick()
+            pa.moveTo(-498, 298)
+            pa.leftClick()
+            pa.moveTo(-675, 205)
+            pa.leftClick()
+            
+        
+    if keyboard.is_pressed("f7"):
+        #40px de altura
+        coodernada_situ = (-1081, 320)
+        pa.moveTo(coodernada_situ)
+        pa.click()
+        situ = 1
+        while  1<= situ <= 12:
+            pa.hotkey("ctrl", "c")
+            situ = int(pyperclip.paste())
+            situ_substituir(situ)
+            for i in range (0,5):
+                pa.hotkey("left")
+            pa.hotkey("down")
+        
+     
             
 

@@ -7,7 +7,7 @@ def tocar_som():
     #iniciadores e configuração
     pyg.mixer.init()
     VOLUME_PADRAO = 0.3
-    PASTA_SONS = r"C:\Users\jenni\Downloads\programs\SCIUTPS\Simples\sons"
+    PASTA_SONS = r"C:\Users\jenni\Downloads\programs\Scripts\pygui_trackland\src\Track\Simples\sons"
     EXTENSAO = ".mp3"
     #iniciadores e configuração
 
