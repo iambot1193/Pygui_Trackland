@@ -185,7 +185,7 @@ while(True):
         
 
         ##### variaveis padrão #########################
-        number_vehicles = 10    
+        number_vehicles = 10
         sheets_y = 270
         ssx_x = 95
         ##### variaveis padrão #############################
@@ -414,11 +414,11 @@ while(True):
         
     if keyboard.is_pressed("f7"):
         #40px de altura
-        coodernada_situ = (-1081, 320)
+        coodernada_situ = (-984, 313)
         pa.moveTo(coodernada_situ)
         pa.click()
         situ = 1
-        while  1<= situ <= 12:
+        while  1<= situ <= 12:  
             pa.hotkey("ctrl", "c")
             situ = int(pyperclip.paste())
             situ_substituir(situ)

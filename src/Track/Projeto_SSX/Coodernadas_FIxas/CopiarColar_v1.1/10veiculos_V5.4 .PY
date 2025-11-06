@@ -4,7 +4,7 @@ import keyboard
 from playsound import playsound
 import sonsperso
 import pyperclip
-import lembrete
+import lembrete_copiarcolar as lembrete
 import threading
 
 

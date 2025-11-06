@@ -85,7 +85,7 @@ while 1:
         for i in range (0, 5):
             close_program()
             pa.hotkey("left")
-        clip.copy(" (21-10-2025)")
+        clip.copy(" (24-10-2025)")
         pa.hotkey("ctrl", "v")
         time.sleep(0.2)
 
