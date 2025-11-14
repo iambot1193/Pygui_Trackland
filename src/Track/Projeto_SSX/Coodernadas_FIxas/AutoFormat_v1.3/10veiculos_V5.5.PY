@@ -177,7 +177,7 @@ while(True):
         
     if keyboard.is_pressed("f2"):
         
-        sonsperso.tocar_som() #somrandom
+        #sonsperso.tocar_som() #somrandom
         n1 = 1
         n2 = 1
         n3 = 1
